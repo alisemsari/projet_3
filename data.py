@@ -21,10 +21,13 @@ connection_url = f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB_NAME}"
 # ENGINE SQLAlchemy compatible AIVEN (SSL obligatoire)
 engine = create_engine(
     connection_url,
-    echo=False,
-    connect_args={"ssl": {}}   # ✅ compatible Aiven
+    echo=True,  # 🔎 active les logs SQL
+    connect_args={
+        "ssl": {
+            "ssl_mode": "REQUIRED"
+        }
+    }
 )
-
 
 # ==============================
 # FONCTION SAUVEGARDE MYSQL

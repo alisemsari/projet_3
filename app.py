@@ -10,6 +10,15 @@ import yfinance as yf
 from analys import analyze_sentiment, predict_price
 from data import save_to_mysql
 # On récupère les accès de manière sécurisée via Streamlit Secrets
+from sqlalchemy import text
+from data import engine
+
+try:
+    with engine.connect() as conn:
+        result = conn.execute(text("SHOW TABLES"))
+        st.write("Tables détectées :", result.fetchall())
+except Exception as e:
+    st.error(f"Erreur DB : {e}")
 
 
 
