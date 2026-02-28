@@ -7,11 +7,16 @@ from sqlalchemy import create_engine, text
 
 # Informations de connexion MySQL
 
-USER = "root"
-PASSWORD = "alisemsari1362"
-HOST = "localhost"
-PORT = "3306"
-DB_NAME = "wild_finance"
+#USER = "root"
+#PASSWORD = "alisemsari1362"
+#HOST = "localhost"
+#PORT = "3306"
+#DB_NAME = "wild_finance"
+USER = "avnadmin"
+PASSWORD = "AVNS_NvUql07Q0nHz_M4gXQm"   # Mets bien ton mot de passe ici
+HOST = "mysql-36c8d2f2-siamak-5e08.j.aivencloud.com"
+PORT = "16144"
+DB_NAME = "defaultdb"
 
 # Création de l'URL de connexion SQLAlchemy
 # Format :
@@ -20,7 +25,12 @@ connection_url = f"mysql+pymysql://{USER}:{PASSWORD}@{HOST}:{PORT}/{DB_NAME}"
 
 # Création du moteur SQLAlchemy
 # echo=False = désactive les logs SQL
-engine = create_engine(connection_url, echo=False)
+#engine = create_engine(connection_url, echo=False)
+engine = create_engine(
+    connection_url, 
+    echo=False, 
+    connect_args={"ssl": {"fake_config": "True"}} # Utilise la config SSL par défaut du système
+)
 
 
 
