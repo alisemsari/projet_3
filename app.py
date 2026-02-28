@@ -9,6 +9,7 @@ import yfinance as yf
 # Modules personnalisés
 from analys import analyze_sentiment, predict_price
 from data import save_to_mysql
+# On récupère les accès de manière sécurisée via Streamlit Secrets
 
 
 
