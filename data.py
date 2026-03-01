@@ -9,7 +9,7 @@ import streamlit as st
 # Informations de connexion MySQL
 
 #USER = "root"
-#PASSWORD = "alisemsari1362"
+#PASSWORD = ""
 #HOST = "localhost"
 #PORT = "3306"
 #DB_NAME = "wild_finance"
