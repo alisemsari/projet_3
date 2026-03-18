@@ -13,18 +13,18 @@ import streamlit as st
 #HOST = "localhost"
 #PORT = "3306"
 #DB_NAME = "wild_finance"
-#USER = "avnadmin"
-#PASSWORD = "AVNS_NvUql07Q0nHz_M4gXQm"   
-#HOST = "mysql-36c8d2f2-siamak-5e08.j.aivencloud.com"
-#PORT = "16144"
-#DB_NAME = "defaultdb"
+USER = "avnadmin"
+PASSWORD = "AVNS_NvUql07Q0nHz_M4gXQm"   
+HOST = "mysql-36c8d2f2-siamak-5e08.j.aivencloud.com"
+PORT = "16144"
+DB_NAME = "defaultdb"
 db_config = st.secrets["mysql"]
 
-USER = db_config["user"]
-PASSWORD = db_config["password"]
-HOST = db_config["host"]
-PORT = db_config["port"]
-DB_NAME = db_config["database"]
+#USER = db_config["user"]
+#PASSWORD = db_config["password"]
+#HOST = db_config["host"]
+#PORT = db_config["port"]
+#DB_NAME = db_config["database"]
 
 
 # Création de l'URL de connexion SQLAlchemy
